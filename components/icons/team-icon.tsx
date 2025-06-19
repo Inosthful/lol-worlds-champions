@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { getImagePath } from "@/lib/utils/assets";
-
 import { Trophy } from "lucide-react";
 import Image from "next/image";
 
@@ -17,17 +16,18 @@ export function TeamIcon({
   className,
   fallbackIcon = true,
 }: TeamIconProps) {
+  // ✅ Utiliser seulement les noms de fichiers, pas les chemins complets
   const teamLogos: Record<string, string> = {
-    fnatic: "/images/teams/fnatic.png",
-    tpa: "/images/teams/taipei.png",
-    ssw: "/images/teams/ssw.webp",
-    skt: "/images/teams/t1.png",
-    ssg: "/images/teams/ssg.png",
-    ig: "/images/teams/ig.webp",
-    fpx: "/images/teams/fpx.png",
-    dwg: "/images/teams/dwg.webp",
-    edg: "/images/teams/edg.png",
-    drx: "/images/teams/drx.png",
+    fnatic: "fnatic.png",
+    tpa: "taipei.png",
+    ssw: "ssw.webp",
+    skt: "t1.png",
+    ssg: "ssg.png",
+    ig: "ig.webp",
+    fpx: "fpx.png",
+    dwg: "dwg.webp",
+    edg: "edg.png",
+    drx: "drx.png",
   };
 
   const logoFileName = teamLogos[teamId];

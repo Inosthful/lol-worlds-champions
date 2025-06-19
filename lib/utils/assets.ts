@@ -1,18 +1,18 @@
 /**
- * Utilitaire pour gérer les chemins d'assets en production et développement
+ * Utilitaire pour gérer les chemins d'assets - Version simplifiée
  */
 const isProd = process.env.NODE_ENV === "production";
-const basePath = isProd ? "/lol-worlds-champions" : ""; // Remplacez par votre nom de repo
-
-export function getAssetPath(path: string): string {
-  // Assurer que le chemin commence par /
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return `${basePath}${normalizedPath}`;
-}
+const basePath = isProd ? "/lol-worlds-champions" : "";
 
 export function getImagePath(
   imageName: string,
   category: "teams" | "roles" | "players" = "teams"
 ): string {
-  return getAssetPath(`/images/${category}/${imageName}`);
+  return `${basePath}/images/${category}/${imageName}`;
+}
+
+export function getAssetPath(path: string): string {
+  // Enlever le slash initial si présent pour éviter les doubles slashes
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${basePath}/${cleanPath}`;
 }

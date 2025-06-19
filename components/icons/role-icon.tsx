@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { getImagePath } from "@/lib/utils/assets";
-
 import Image from "next/image";
 
 interface RoleIconProps {
@@ -9,12 +8,13 @@ interface RoleIconProps {
 }
 
 export function RoleIcon({ role, className }: RoleIconProps) {
+  // ✅ Utiliser seulement les noms de fichiers, pas les chemins complets
   const roleImages: Record<string, string> = {
-    TOP: "/images/roles/top.svg",
-    JUNGLE: "/images/roles/jungle.svg",
-    MID: "/images/roles/mid.svg",
-    ADC: "/images/roles/adc.svg",
-    SUPPORT: "/images/roles/support.svg",
+    TOP: "top.svg",
+    JUNGLE: "jungle.svg",
+    MID: "mid.svg",
+    ADC: "adc.svg",
+    SUPPORT: "support.svg",
   };
 
   const roleNames = {
