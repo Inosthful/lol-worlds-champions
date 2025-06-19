@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import { getImagePath } from "@/lib/utils/assets";
+
 import Image from "next/image";
 
 interface RoleIconProps {
@@ -7,7 +9,7 @@ interface RoleIconProps {
 }
 
 export function RoleIcon({ role, className }: RoleIconProps) {
-  const roleImages = {
+  const roleImages: Record<string, string> = {
     TOP: "/images/roles/top.svg",
     JUNGLE: "/images/roles/jungle.svg",
     MID: "/images/roles/mid.svg",
@@ -26,7 +28,7 @@ export function RoleIcon({ role, className }: RoleIconProps) {
   return (
     <div className={cn("relative", className)}>
       <Image
-        src={roleImages[role]}
+        src={getImagePath(roleImages[role], "roles")}
         alt={roleNames[role]}
         width={24}
         height={24}

@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## DEPLOYED ON GITHUB ACTIONS
 
+here is the link for the deployed app https://inosthful.github.io/lol-worlds-champions/
+
 ## LOCAL
 
 First, run the development server:
