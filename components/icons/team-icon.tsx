@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import { getImagePath } from "@/lib/utils/assets";
+
 import { Trophy } from "lucide-react";
 import Image from "next/image";
 
@@ -28,13 +30,13 @@ export function TeamIcon({
     drx: "/images/teams/drx.png",
   };
 
-  const logoPath = teamLogos[teamId];
+  const logoFileName = teamLogos[teamId];
 
-  if (logoPath) {
+  if (logoFileName) {
     return (
       <div className={cn("relative", className)}>
         <Image
-          src={logoPath}
+          src={getImagePath(logoFileName, "teams")}
           alt={`Logo ${teamName}`}
           width={24}
           height={24}
