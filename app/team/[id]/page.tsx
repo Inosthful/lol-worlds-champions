@@ -94,7 +94,11 @@ export default function TeamPage({ params }: TeamPageProps) {
 
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center text-3xl">
-              <Users className="h-8 w-8 text-slate-600" />
+              <TeamIcon
+                teamName={team.name}
+                teamId={team.id}
+                className="h-8 w-8 text-slate-600"
+              />
             </div>
             <div>
               <h1 className="text-3xl font-bold text-slate-800">{team.name}</h1>
