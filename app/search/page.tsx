@@ -29,3 +29,9 @@ export default function SearchPage() {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Recherche - Worlds Champions",
+  description:
+    "Recherchez parmi tous les joueurs et équipes champions du monde de League of Legends.",
+};
